@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
         {/* Background Animation - Multiple Layerss */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Animated Grid Pattern with Moving Scan Lines */}
+          {/* Animated Grid Pattern with Moving Scan Lins */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
             <div className="absolute inset-0 animate-grid-scan [background:linear-gradient(to_bottom,transparent_0%,rgba(59,130,246,0.1)_20%,transparent_40%)] h-[40%]"></div>
