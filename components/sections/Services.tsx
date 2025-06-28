@@ -43,7 +43,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen  bg-slate-900 flex items-center justify-center p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-900/40 border border-blue-700/40 backdrop-blur-xl mb-4 sm:mb-6 hover:bg-blue-800/40 hover:border-blue-600/50 transition-all duration-300">
