@@ -6,7 +6,7 @@ export default function Hero() {
  return (
     <div className="min-h-screen bg-slate-900 text-white">
       <div className="h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
-        {/* Background Animation - Multiple Layers */}
+        {/* Background Animation - Multiple Layerss */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Animated Grid Pattern with Moving Scan Lines */}
           <div className="absolute inset-0 opacity-10">
