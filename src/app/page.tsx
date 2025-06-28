@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Hero from '@/components/sections/Hero';
