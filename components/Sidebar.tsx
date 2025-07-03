@@ -147,9 +147,8 @@ export default function Sidebar({
             isSidebarOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           )}
           style={{ transitionDelay: isSidebarOpen ? '450ms' : '0ms' }}>
-            <p className="text-blue-300/70 text-sm mb-4 text-center">Ready to transform your business?</p>
             <button className="w-full bg-gradient-to-r from-blue-600/80 to-cyan-600/80 backdrop-blur-xl text-blue-100 py-3 px-6 rounded-2xl font-semibold text-lg hover:from-blue-500/90 hover:to-cyan-500/90 transition-all duration-300 transform hover:scale-[1.02] shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 border border-blue-400/30">
-              Contact Us
+              Sign Up/Sign In
             </button>
           </div>
         </div>
