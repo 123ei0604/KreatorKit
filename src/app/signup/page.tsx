@@ -190,7 +190,7 @@ export default function SignupPage() {
                         value={formData.username}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-blue-900/30 text-white border border-blue-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 placeholder-blue-400/50"
+                        className="w-full px-4 py-3 bg-blue-900/30 text-black border border-blue-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 placeholder-blue-400/50"
                         placeholder="Enter your username"
                       />
                     </div>
@@ -211,7 +211,7 @@ export default function SignupPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-blue-900/30 text-white border border-blue-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 placeholder-blue-400/50"
+                        className="w-full px-4 py-3 bg-blue-900/30 text-black border border-blue-700/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 placeholder-blue-400/50"
                         placeholder="your@email.com"
                       />
                     </div>
