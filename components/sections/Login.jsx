@@ -1,16 +1,18 @@
 'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { GoogleLogin, GoogleOAuthProvider, CredentialResponse } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
-interface GoogleJwtPayload {
-  email: string;
-  name: string;
-  picture: string;
-  sub: string;
-}
+/**
+ * @typedef {Object} GoogleJwtPayload
+ * @property {string} email
+ * @property {string} name
+ * @property {string} picture
+ * @property {string} sub
+ */
 
 export default function LoginPage() {
   const router = useRouter();
@@ -21,14 +23,14 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -64,7 +66,7 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
+  const handleGoogleSuccess = async (credentialResponse) => {
     try {
       setLoading(true);
       setError('');
@@ -184,7 +186,7 @@ export default function LoginPage() {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-              
+                <div className="w-full border-t border-blue-600/50"></div>
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="px-2 bg-transparent text-blue-200">

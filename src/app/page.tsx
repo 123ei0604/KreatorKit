@@ -4,6 +4,8 @@ import Sidebar from '@/components/Sidebar';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
+import SignupPage from './signup/page';
+import LoginPage from './login/page';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
@@ -17,6 +19,10 @@ export default function Home() {
         return <About />;
       case 'services':
         return <Services />;
+      case 'signup':
+        return <SignupPage />;
+      case 'login':
+        return <LoginPage />;
       default:
         return <Hero />;
     }
