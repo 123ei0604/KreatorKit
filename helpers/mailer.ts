@@ -31,7 +31,7 @@ export const sendEmail = async ({ email, emailType, userId }: EmailOptions) => {
     // Email content
     let subject = '';
     let html = '';
-    const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
+    const baseUrl = 'https://kreator-kit.vercel.app';
 
     if (emailType === 'VERIFY') {
       subject = 'Verify Your Email Address';
@@ -71,7 +71,7 @@ export const sendEmail = async ({ email, emailType, userId }: EmailOptions) => {
 
     // Send email
     await transporter.sendMail({
-      from: `"HexaDepth" <${process.env.MAILER_FROM}>`,
+      from: `"KreatorKit" <${process.env.MAILER_FROM}>`,
       to: email,
       subject,
       html,
