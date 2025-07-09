@@ -1,47 +1,55 @@
 "use client";
+import { useRouter } from 'next/navigation';
+import React from 'react';
 
-import { Smartphone, Globe, Database, Rocket, Shield, Headphones, ArrowRight } from 'lucide-react';
-
+import { Smartphone, Database, Rocket, Shield, Headphones, ArrowRight, StarIcon } from 'lucide-react';
 const services = [
   {
-    icon: Globe,
-    title: 'Web Development',
+    icon: StarIcon,
+    title: 'Rate Your Thumbnail',
     description: 'Custom websites and web applications built with cutting-edge technologies.',
     features: ['React & Next.js', 'TypeScript', 'Responsive Design'],
+    route: '/RateThumbnail',
   },
   {
     icon: Smartphone,
     title: 'Mobile Development',
     description: 'Native and cross-platform mobile applications for iOS and Android.',
     features: ['React Native', 'Flutter', 'App Store Optimization'],
+    route: '/services/mobile-development',
   },
   {
     icon: Database,
     title: 'Backend Development',
     description: 'Scalable server-side solutions and robust database architecture.',
     features: ['Node.js', 'PostgreSQL', 'API Development'],
+    route: '/services/backend-development',
   },
   {
     icon: Rocket,
     title: 'Performance Optimization',
     description: 'Speed up your applications and enhance user experience significantly.',
     features: ['Core Web Vitals', 'SEO Optimization', 'Caching Strategies'],
+    route: '/services/performance-optimization',
   },
   {
     icon: Shield,
     title: 'Security Consulting',
     description: 'Comprehensive security audits and implementation of best practices.',
     features: ['Security Audits', 'OWASP Standards', 'Data Protection'],
+    route: '/services/security-consulting',
   },
   {
     icon: Headphones,
     title: 'Support & Maintenance',
     description: 'Ongoing support and maintenance for your digital products.',
     features: ['24/7 Monitoring', 'Regular Updates', 'Bug Fixes'],
+    route: '/services/support-maintenance',
   },
 ];
 
 export default function Services() {
+  const router = useRouter();
   return (
     <div className="min-h-screen  bg-slate-900 flex items-center justify-center p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto w-full">
@@ -62,7 +70,7 @@ export default function Services() {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 lg:mb-16">
-          {services.map(({ icon: Icon, title, description, features }, index) => (
+          {services.map(({ icon: Icon, title, description, features,route }, index) => (
             <div
               key={title}
               className="group p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl bg-slate-900/60 border border-blue-800/40 backdrop-blur-xl hover:bg-slate-800/60 hover:border-blue-600/60 transition-all duration-500 hover:scale-105 relative overflow-hidden"
@@ -98,7 +106,7 @@ export default function Services() {
               </ul>
               
               <div className="pt-3 sm:pt-4 lg:pt-6 border-t border-blue-800/40 relative z-10">
-                <button className="flex items-center space-x-2 text-blue-300 font-medium hover:text-indigo-300 transition-colors duration-300 group-hover:underline text-xs sm:text-sm">
+                <button onClick={() => router.push(route)} className="flex items-center space-x-2 text-blue-300 font-medium hover:text-indigo-300 transition-colors duration-300 group-hover:underline text-xs sm:text-sm">
                   <span>Learn More</span>
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
