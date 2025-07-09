@@ -32,7 +32,7 @@ const RateThumbnail = () => {
     setError(null);
 
     try {
-      const res = await fetch(process.env.RATING_API_URL!, {
+      const res = await fetch('https://image-rater-apii-cec8dxhbfgabbzaf.centralindia-01.azurewebsites.net/predict', {
         method: 'POST',
         body: formData,
         headers: {
