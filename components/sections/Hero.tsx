@@ -106,13 +106,14 @@ export default function Hero() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 justify-center items-center mb-6 sm:mb-8 lg:mb-12 px-4">
-            <button className="w-full sm:w-auto group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-blue-500/25 relative overflow-hidden">
+            {/* <button  className="w-full sm:w-auto group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-blue-500/25 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-indigo-400/0 to-purple-400/0 group-hover:from-blue-400/20 group-hover:via-indigo-400/10 group-hover:to-purple-400/20 transition-all duration-500"></div>
               <span className="flex items-center justify-center space-x-2 relative z-10">
-                <span className="text-sm sm:text-base">Get Started</span>
+                <span
+                 className="text-sm sm:text-base">Get Started</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </button> */}
             
             <button className="w-full sm:w-auto px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 rounded-full border border-blue-700/50 hover:border-blue-500/50 transition-all duration-300 hover:bg-blue-900/30 backdrop-blur-xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-indigo-600/0 to-purple-600/0 group-hover:from-blue-600/10 group-hover:via-indigo-600/5 group-hover:to-purple-600/10 transition-all duration-500"></div>

@@ -1,8 +1,8 @@
 "use client";
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation'
 import React from 'react';
 
-import { Smartphone, Database, Rocket, Shield, Headphones, ArrowRight, StarIcon } from 'lucide-react';
+import { Rocket, Shield, Headphones, ArrowRight, StarIcon, Music, NotebookText } from 'lucide-react';
 const services = [
   {
     icon: StarIcon,
@@ -12,39 +12,18 @@ const services = [
     route: '/RateThumbnail',
   },
   {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    description: 'Native and cross-platform mobile applications for iOS and Android.',
+    icon: Music,
+    title: 'Song Sugeest',
+    description: 'Upload your video and get suggestion about the song by thumbnail!',
     features: ['React Native', 'Flutter', 'App Store Optimization'],
-    route: '/services/mobile-development',
+    route: '/Suggest',
   },
   {
-    icon: Database,
-    title: 'Backend Development',
-    description: 'Scalable server-side solutions and robust database architecture.',
+    icon: NotebookText,
+    title: 'Transcript Generator',
+    description: 'Generate the perfect Transcript for your video!',
     features: ['Node.js', 'PostgreSQL', 'API Development'],
-    route: '/services/backend-development',
-  },
-  {
-    icon: Rocket,
-    title: 'Performance Optimization',
-    description: 'Speed up your applications and enhance user experience significantly.',
-    features: ['Core Web Vitals', 'SEO Optimization', 'Caching Strategies'],
-    route: '/services/performance-optimization',
-  },
-  {
-    icon: Shield,
-    title: 'Security Consulting',
-    description: 'Comprehensive security audits and implementation of best practices.',
-    features: ['Security Audits', 'OWASP Standards', 'Data Protection'],
-    route: '/services/security-consulting',
-  },
-  {
-    icon: Headphones,
-    title: 'Support & Maintenance',
-    description: 'Ongoing support and maintenance for your digital products.',
-    features: ['24/7 Monitoring', 'Regular Updates', 'Bug Fixes'],
-    route: '/services/support-maintenance',
+    route: '/GenTrans',
   },
 ];
 
@@ -93,17 +72,7 @@ export default function Services() {
                 {description}
               </p>
               
-              <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4 lg:mb-6 relative z-10">
-                {features.map((feature, featureIndex) => (
-                  <li 
-                    key={featureIndex}
-                    className="flex items-center text-xs sm:text-sm text-blue-300/80"
-                  >
-                    <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full mr-2 sm:mr-3 flex-shrink-0 group-hover:bg-indigo-400 transition-colors duration-300"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+            
               
               <div className="pt-3 sm:pt-4 lg:pt-6 border-t border-blue-800/40 relative z-10">
                 <button onClick={() => router.push(route)} className="flex items-center space-x-2 text-blue-300 font-medium hover:text-indigo-300 transition-colors duration-300 group-hover:underline text-xs sm:text-sm">
