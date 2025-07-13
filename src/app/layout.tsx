@@ -5,8 +5,11 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Code for Bharat',
-  description: 'Empowering Bharat through code and technology',
+  title: 'Kreator Kit',
+  description: 'Enhance the Reach of your content with AI services',
+  icons:{
+    icon:'/logo.jpg'
+  }
 };
 
 export default function RootLayout({
