@@ -28,7 +28,7 @@ export default function GenTrans() {
     setEnhancedTranscript('');
 
     try {
-      const response = await fetch('/api/transcript', {
+      const response = await fetch('http://localhost:5000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
