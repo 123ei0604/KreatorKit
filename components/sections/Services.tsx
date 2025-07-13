@@ -39,12 +39,11 @@ export default function Services() {
           </div>
           
           <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent">
-            Digital Solutions
+            Our Services
           </h2>
           
           <p className="text-sm sm:text-lg lg:text-xl text-blue-200/80 max-w-3xl mx-auto leading-relaxed px-4">
-            Comprehensive digital solutions tailored to your unique needs. From concept to deployment, 
-            I provide end-to-end services that drive results and exceed expectations.
+           Smart content tools designed for digital creators. From ideation to optimization, our AI suite automates workflows to boost engagement and maximize reach
           </p>
         </div>
         
@@ -84,7 +83,7 @@ export default function Services() {
           ))}
         </div>
         
-        <div className="text-center">
+        {/* <div className="text-center">
           <div className="inline-block p-4 sm:p-6 lg:p-8 rounded-xl lg:rounded-2xl bg-gradient-to-r from-blue-900/40 to-indigo-900/40 border border-blue-700/40 backdrop-blur-xl max-w-2xl mx-auto relative overflow-hidden group hover:from-blue-800/50 hover:to-indigo-800/50 hover:border-blue-600/50 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-indigo-600/0 to-purple-600/0 group-hover:from-blue-600/10 group-hover:via-indigo-600/5 group-hover:to-purple-600/10 transition-all duration-500"></div>
             <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 lg:mb-4 text-blue-100 relative z-10">
@@ -98,7 +97,7 @@ export default function Services() {
               <span className="relative z-10">Get In Touch</span>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
