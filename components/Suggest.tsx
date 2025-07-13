@@ -39,7 +39,7 @@ export default function SuggestSong() {
     formData.append('num_songs', numSongs.toString());
 
     try {
-      const response = await fetch('https://3a8db5b838ea.ngrok-free.app/suggest_songs', {
+      const response = await fetch('https://song-suggest-api-gsczh4gwf5h8agdx.centralindia-01.azurewebsites.net/suggest_songs', {
         method: 'POST',
         body: formData,
       });
