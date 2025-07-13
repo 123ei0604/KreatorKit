@@ -1,10 +1,11 @@
-export const runtime = "nodejs"; 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
+
+export const dynamic = 'force-dynamic'; // Add this line
 
 const MODEL = "llama3-70b-8192";
 const TEMPERATURE = 0.5;
@@ -14,8 +15,7 @@ function createCombinedPrompt(prompt: string, transcript: string): string {
   return `${prompt}:\n${transcript}\n\nPlease enhance or improve the transcript above, maintaining the original meaning.`;
 }
 
-// POST: /api/transcript
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
   try {
     const body = await request.json();
     const prompt = body.prompt;
@@ -25,8 +25,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error: "Missing 'prompt' or 'transcript'.",
-          instruction:
-            "Please input 'prompt' in the format: <Channel name>:<Category>:<Title>",
+          instruction: "Please input 'prompt' in the format: <Channel name>:<Category>:<Title>",
         },
         { status: 400 }
       );
@@ -36,8 +35,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           error: "Invalid prompt format.",
-          instruction:
-            "Use this format: <Channel name>:<Category>:<Title>",
+          instruction: "Use this format: <Channel name>:<Category>:<Title>",
         },
         { status: 400 }
       );
@@ -50,8 +48,7 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: "system",
-          content:
-            "You are an AI language assistant that improves transcripts for clarity and tone.",
+          content: "You are an AI language assistant that improves transcripts for clarity and tone.",
         },
         {
           role: "user",
@@ -70,7 +67,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// GET: /api/transcript (Health check)
 export async function GET() {
   return NextResponse.json({
     status: "healthy",
