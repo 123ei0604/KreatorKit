@@ -28,7 +28,7 @@ export default function GenTrans() {
     setEnhancedTranscript('');
 
     try {
-      const response = await fetch('http://localhost:5000/generate', {
+      const response = await fetch('https://groq-transcipt-api-frdjcqhwejbzdqcp.centralindia-01.azurewebsites.net/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
