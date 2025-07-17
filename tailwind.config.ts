@@ -14,6 +14,16 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      theme: {
+    extend: {
+      colors: {
+        blue: {
+          900: '#0c1a32',
+          950: '#0a1427'
+        }
+      }
+    }
+  },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
