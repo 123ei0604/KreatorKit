@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Github, Linkedin, Mail, Sparkles, Zap, Star, Rocket } from 'lucide-react';
+import { ArrowRight, Play, TrendingUp, Sparkles, Zap, Star, Music, Image, FileText, BarChart3 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -37,20 +37,31 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ff00ff08_1px,transparent_1px),linear-gradient(to_bottom,#ff00ff08_1px,transparent_1px)] bg-[size:80px_80px]"></div>
       </div>
 
-      {/* Holographic Scanlines */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent h-32 animate-pulse" style={{ animation: 'matrix-rain 8s linear infinite' }}></div>
-      </div>
-
       {/* Main Content */}
       <div className="relative z-10 h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-6xl mx-auto">
+        <div className="text-center max-w-7xl mx-auto">
+          {/* Platform Badges */}
+          <div className="mb-8 flex flex-wrap justify-center gap-4">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 glass-neon rounded-full cyber-glow">
+              <Play className="w-4 h-4 text-red-400 electric-effect" />
+              <span className="text-sm font-bold text-white">YouTube</span>
+            </div>
+            <div className="inline-flex items-center space-x-2 px-4 py-2 glass-neon rounded-full cyber-glow">
+              <div className="w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-400 rounded electric-effect"></div>
+              <span className="text-sm font-bold text-white">Instagram</span>
+            </div>
+            <div className="inline-flex items-center space-x-2 px-4 py-2 glass-neon rounded-full cyber-glow">
+              <div className="w-4 h-4 bg-black rounded electric-effect"></div>
+              <span className="text-sm font-bold text-white">TikTok</span>
+            </div>
+          </div>
+
           {/* Floating Badge */}
           <div className="mb-8 animate-bounce">
             <div className="inline-flex items-center space-x-3 px-6 py-3 glass-neon rounded-full cyber-glow">
               <Sparkles className="w-5 h-5 text-cyan-300 electric-effect" />
-              <span className="text-sm font-bold text-white neon-text">NEXT-GEN DIGITAL EXPERIENCE</span>
-              <Zap className="w-5 h-5 text-yellow-300 electric-effect" />
+              <span className="text-sm font-bold text-white neon-text">AI-POWERED CONTENT OPTIMIZATION</span>
+              <TrendingUp className="w-5 h-5 text-green-300 electric-effect" />
             </div>
           </div>
           
@@ -66,21 +77,43 @@ export default function Hero() {
           
           {/* Subtitle with Glow Effect */}
           <div className="mb-12 relative">
-            <p className="text-lg sm:text-xl lg:text-3xl text-white/90 leading-relaxed max-w-4xl mx-auto font-light">
+            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-5xl mx-auto font-light">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-pink-200 bg-clip-text text-transparent">
-                Unleash your creative potential with our revolutionary AI-powered platform that transforms 
-                ordinary content into extraordinary digital masterpieces
+                Stop wasting hours on non-creative tasks. KreatorKit is your all-in-one AI assistant for 
+                <span className="text-yellow-300 font-bold"> trending music suggestions</span>, 
+                <span className="text-pink-300 font-bold"> thumbnail optimization</span>, and 
+                <span className="text-cyan-300 font-bold"> script generation</span> — 
+                so you can focus on what matters: creating amazing content.
               </span>
             </p>
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/20 via-pink-500/20 to-yellow-500/20 blur-xl rounded-full"></div>
+          </div>
+
+          {/* Feature Highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="glass-ultra p-6 rounded-2xl cyber-glow hover:scale-105 transition-all duration-300">
+              <Music className="w-8 h-8 text-purple-400 mx-auto mb-3 electric-effect" />
+              <h3 className="text-white font-bold mb-2">Trending Music</h3>
+              <p className="text-white/70 text-sm">AI-powered background music suggestions based on trends</p>
+            </div>
+            <div className="glass-ultra p-6 rounded-2xl cyber-glow hover:scale-105 transition-all duration-300">
+              <Image className="w-8 h-8 text-cyan-400 mx-auto mb-3 electric-effect" />
+              <h3 className="text-white font-bold mb-2">Thumbnail Scoring</h3>
+              <p className="text-white/70 text-sm">Get scored feedback and improvement suggestions</p>
+            </div>
+            <div className="glass-ultra p-6 rounded-2xl cyber-glow hover:scale-105 transition-all duration-300">
+              <FileText className="w-8 h-8 text-yellow-400 mx-auto mb-3 electric-effect" />
+              <h3 className="text-white font-bold mb-2">Script Generation</h3>
+              <p className="text-white/70 text-sm">LLM-generated transcript suggestions for better retention</p>
+            </div>
           </div>
           
           {/* Enhanced Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <button className="group relative btn-cyber px-8 py-4 rounded-2xl text-lg font-bold transform hover:scale-110 transition-all duration-300">
               <span className="relative z-10 flex items-center space-x-3">
-                <Rocket className="w-6 h-6" />
-                <span>LAUNCH EXPERIENCE</span>
+                <Play className="w-6 h-6" />
+                <span>START OPTIMIZING</span>
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </span>
             </button>
@@ -88,31 +121,26 @@ export default function Hero() {
             <button className="group px-8 py-4 glass-ultra rounded-2xl border-2 rainbow-border hover:scale-110 transition-all duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-pink-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative z-10 text-white font-bold text-lg flex items-center space-x-2">
-                <Star className="w-5 h-5 text-yellow-300" />
-                <span>EXPLORE FEATURES</span>
+                <BarChart3 className="w-5 h-5 text-green-300" />
+                <span>VIEW FEATURES</span>
               </span>
             </button>
           </div>
           
-          {/* Enhanced Social Links */}
-          <div className="flex justify-center space-x-8">
-            {[
-              { icon: Github, href: '#', label: 'GitHub', color: 'from-purple-400 to-pink-400' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'from-blue-400 to-cyan-400' },
-              { icon: Mail, href: '#', label: 'Email', color: 'from-green-400 to-teal-400' },
-            ].map(({ icon: Icon, href, label, color }, index) => (
-              <a
-                key={index}
-                href={href}
-                aria-label={label}
-                className={`group relative p-4 glass-neon rounded-2xl hover:scale-125 transition-all duration-300 cyber-glow`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-r ${color} opacity-0 group-hover:opacity-30 rounded-2xl transition-opacity duration-300`}></div>
-                <Icon className="w-8 h-8 text-white relative z-10 electric-effect" />
-                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/50 to-pink-500/50 rounded-2xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
-            ))}
+          {/* Stats Section */}
+          <div className="flex justify-center space-x-8 text-center">
+            <div className="glass-neon p-4 rounded-xl cyber-glow">
+              <div className="text-2xl font-black text-cyan-400 neon-text">10x</div>
+              <div className="text-white/70 text-sm">Faster Content</div>
+            </div>
+            <div className="glass-neon p-4 rounded-xl cyber-glow">
+              <div className="text-2xl font-black text-pink-400 neon-text">95%</div>
+              <div className="text-white/70 text-sm">Accuracy Rate</div>
+            </div>
+            <div className="glass-neon p-4 rounded-xl cyber-glow">
+              <div className="text-2xl font-black text-yellow-400 neon-text">24/7</div>
+              <div className="text-white/70 text-sm">AI Assistant</div>
+            </div>
           </div>
 
           {/* Floating Elements */}

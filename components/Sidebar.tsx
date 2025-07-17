@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Menu, X, Home, User, Briefcase, Sparkles, Zap } from 'lucide-react';
+import { Menu, X, Home, Target, Zap, Sparkles, Play, Music, Image, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface SidebarProps {
@@ -12,9 +12,15 @@ interface SidebarProps {
 }
 
 const navigation = [
-  { id: 'home', label: 'Home', icon: Home, gradient: 'from-cyan-500 to-blue-500' },
-  { id: 'about', label: 'About', icon: User, gradient: 'from-pink-500 to-purple-500' },
-  { id: 'services', label: 'Services', icon: Briefcase, gradient: 'from-yellow-500 to-orange-500' },
+  { id: 'home', label: 'Home', icon: Home, gradient: 'from-cyan-500 to-blue-500', description: 'AI Content Platform' },
+  { id: 'about', label: 'Problem & Solution', icon: Target, gradient: 'from-red-500 to-orange-500', description: 'Creator Challenges' },
+  { id: 'services', label: 'Features', icon: Zap, gradient: 'from-purple-500 to-pink-500', description: 'AI-Powered Tools' },
+];
+
+const quickFeatures = [
+  { icon: Music, label: 'Music AI', gradient: 'from-purple-500 to-pink-500' },
+  { icon: Image, label: 'Thumbnail Score', gradient: 'from-cyan-500 to-blue-500' },
+  { icon: FileText, label: 'Script Gen', gradient: 'from-yellow-500 to-orange-500' },
 ];
 
 export default function Sidebar({ 
@@ -56,10 +62,32 @@ export default function Sidebar({
         <div className="relative h-full flex items-center justify-between px-6">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Sparkles className="w-8 h-8 text-cyan-400 electric-effect" />
-            <h1 className="text-2xl font-black holographic-bg bg-clip-text text-transparent">
-              KreatorKit
-            </h1>
+            <div className="relative">
+              <Sparkles className="w-8 h-8 text-cyan-400 electric-effect" />
+              <div className="absolute -inset-1 bg-cyan-400/20 rounded-full blur-sm"></div>
+            </div>
+            <div>
+              <h1 className="text-2xl font-black holographic-bg bg-clip-text text-transparent">
+                KreatorKit
+              </h1>
+              <p className="text-xs text-cyan-300/80 font-semibold -mt-1">AI Content Studio</p>
+            </div>
+          </div>
+          
+          {/* Quick Feature Icons */}
+          <div className="hidden sm:flex items-center space-x-2">
+            {quickFeatures.map(({ icon: Icon, label, gradient }) => (
+              <div key={label} className="group relative">
+                <div className={`p-2 glass-neon rounded-xl bg-gradient-to-r ${gradient} opacity-70 hover:opacity-100 transition-opacity duration-300`}>
+                  <Icon className="w-4 h-4 text-white" />
+                </div>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="px-2 py-1 glass-neon rounded text-xs text-white whitespace-nowrap">
+                    {label}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
           
           {/* Hamburger Button */}
@@ -105,15 +133,18 @@ export default function Sidebar({
           <X size={28} className="text-white electric-effect" />
         </button>
 
-        {/* Logo */}
+        {/* Enhanced Logo */}
         <div className="absolute top-8 left-8 z-50">
           <div className="flex items-center space-x-3">
-            <Zap className="w-10 h-10 text-yellow-400 electric-effect" />
+            <div className="relative">
+              <Play className="w-10 h-10 text-cyan-400 electric-effect" />
+              <div className="absolute -inset-2 bg-cyan-400/30 rounded-full blur-md"></div>
+            </div>
             <div>
               <h1 className="text-3xl font-black holographic-bg bg-clip-text text-transparent neon-text">
                 KreatorKit
               </h1>
-              <p className="text-cyan-300/80 text-sm font-semibold">Digital Excellence</p>
+              <p className="text-cyan-300/80 text-sm font-semibold">AI Content Optimization Platform</p>
             </div>
           </div>
         </div>
@@ -122,7 +153,7 @@ export default function Sidebar({
         <div className="flex flex-col items-center justify-center h-full px-6 py-24 relative z-10">
           <nav className="w-full max-w-lg">
             <div className="flex flex-col items-center justify-center gap-8 w-full">
-              {navigation.map(({ id, label, icon: Icon, gradient }, index) => {
+              {navigation.map(({ id, label, icon: Icon, gradient, description }, index) => {
                 const isActive = activeSection === id;
                 return (
                   <div
@@ -166,15 +197,25 @@ export default function Sidebar({
                         />
                       </div>
                       
-                      {/* Label */}
-                      <span className={cn(
-                        "text-2xl font-bold transition-all duration-300 relative z-10",
-                        isActive 
-                          ? "text-white neon-text" 
-                          : "text-cyan-200 group-hover:text-white"
-                      )}>
-                        {label}
-                      </span>
+                      {/* Label & Description */}
+                      <div className="flex-1 text-left relative z-10">
+                        <span className={cn(
+                          "text-2xl font-bold transition-all duration-300 block",
+                          isActive 
+                            ? "text-white neon-text" 
+                            : "text-cyan-200 group-hover:text-white"
+                        )}>
+                          {label}
+                        </span>
+                        <span className={cn(
+                          "text-sm font-medium transition-all duration-300 block mt-1",
+                          isActive 
+                            ? "text-cyan-300" 
+                            : "text-white/60 group-hover:text-cyan-300"
+                        )}>
+                          {description}
+                        </span>
+                      </div>
                       
                       {/* Active Indicator */}
                       {isActive && (
@@ -186,6 +227,37 @@ export default function Sidebar({
               })}
             </div>
           </nav>
+
+          {/* Feature Showcase */}
+          <div className={cn(
+            "mt-12 transform transition-all duration-700",
+            isSidebarOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          )}
+          style={{ transitionDelay: isSidebarOpen ? '800ms' : '0ms' }}>
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-bold text-white/80 mb-2">Quick Access</h3>
+              <p className="text-white/60 text-sm">Jump to AI-powered tools</p>
+            </div>
+            
+            <div className="flex justify-center space-x-4">
+              {quickFeatures.map(({ icon: Icon, label, gradient }, index) => (
+                <div
+                  key={label}
+                  className="group relative"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <button className={`p-4 glass-neon rounded-2xl bg-gradient-to-r ${gradient} opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 cyber-glow`}>
+                    <Icon className="w-6 h-6 text-white electric-effect" />
+                  </button>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="px-3 py-1 glass-neon rounded-full text-xs text-white whitespace-nowrap">
+                      {label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom CTA */}
@@ -196,15 +268,15 @@ export default function Sidebar({
           )}
           style={{ transitionDelay: isSidebarOpen ? '600ms' : '0ms' }}>
             <div className="text-center mb-6">
-              <p className="text-cyan-300/80 text-lg font-semibold mb-2">Ready to transform your vision?</p>
-              <p className="text-white/60 text-sm">Let's create something extraordinary together</p>
+              <p className="text-cyan-300/80 text-lg font-semibold mb-2">Ready to go viral?</p>
+              <p className="text-white/60 text-sm">Let AI optimize your content for maximum engagement</p>
             </div>
             
             <button className="w-full btn-cyber py-4 rounded-2xl text-lg font-bold transform hover:scale-105 transition-all duration-300">
               <span className="relative z-10 flex items-center justify-center space-x-3">
+                <Play className="w-6 h-6" />
+                <span>START CREATING</span>
                 <Sparkles className="w-6 h-6" />
-                <span>START YOUR PROJECT</span>
-                <Zap className="w-6 h-6" />
               </span>
             </button>
           </div>
